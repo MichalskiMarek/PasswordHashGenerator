@@ -34,7 +34,8 @@ namespace PasswordHashGenerator
         {
             if (Validation.DataValidation(clientName, date))
             {
-                 hashedPassword = Hashing.CreateHashedPassword(clientName, date);
+                hashedPassword = Hashing.CreateHashedPassword(clientName.Trim().ToLower(), date);
+
                  HashedPassword.Text = hashedPassword;
             }
         }

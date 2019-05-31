@@ -13,11 +13,12 @@ namespace PasswordHashGenerator
         {
             if (clientName == null || clientName.Length == 0)
             {
-                MessageBox.Show("Client name cannot be empty!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Client name can not be empty!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            else if (date == null)
+            else if (date == null || date.Length == 0)
             {
+                MessageBox.Show("Date can not be empty!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             else return true;
